@@ -1,0 +1,391 @@
+* {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    /* Flex layout */
+    flex-direction: column;
+    /* Dikey sıralama */
+    height: 100vh;
+    /* Tam yükseklik */
+}
+
+/* 🔴 ===== HEADER START ===== */
+header {
+    display: flex;
+    /* Elemanları yan yana göster */
+    justify-content: space-between;
+    /* Aralarında boşluk bırak */
+    align-items: center;
+    /* Dikey olarak ortala */
+    padding: 0 20px;
+    /* Yatay padding */
+    background-color: black;
+    /* Siyah arka plan */
+    position: fixed;
+    /* Sabit konumlandırma */
+    top: 0;
+    /* Üstten 0px */
+    left: 0;
+    /* Soldan 0px */
+    right: 0;
+    /* Sağdan 0px */
+    height: 56px;
+    /* Header yüksekliği */
+    z-index: 1000;
+    /* Üstte görünsün */
+}
+
+.Header-left {
+    display: flex;
+    align-items: center;
+}
+
+header i {
+    font-size: 20px;
+}
+
+/* YouTube Logosu Styling */
+.Header-left .logo {
+    color: #FF0033;
+    /* YouTube kırmızı rengi */
+    margin-left: 20px;
+    /* Soldan boşluk */
+    font-size: 24px;
+    /* İkon boyutu */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Header-center {
+    display: flex;
+    align-items: center;
+
+}
+
+.Header-center input {
+    background-color: #121212;
+    /* Input arka plan rengini ayarla */
+    border: none;
+    /* Input'un border'ını kaldır */
+    outline: none;
+    /* Input odak olunca çevresinde gelen çerçeveyi kaldır */
+    width: 100%;
+    /* Input'u konteyner kadar geniş yap */
+    padding: 8px 12px;
+    /* Input'a içeri boşluk ekle */
+    color: white;
+    /* Yazı rengini ayarla */
+}
+
+.header-Searc {
+    border: 1px solid #aaa;
+    /* Arama çubuğuna borders ver */
+    padding: 6px 12px;
+    /* Kutu içinde boşluk */
+    display: flex;
+    /* İçeriği yatay sırala */
+    align-items: center;
+    /* Dikey ortala */
+    border-radius: 30px;
+    /* Köşeleri yuvarlat */
+    margin-right: 12px;
+    /* Sağa boşluk */
+    width: 400px;
+    /* Arama çubuğunun genişliğini 400px yap (uzun yap) */
+    background-color: #121212;
+    /* Arka plan rengini ayarla */
+}
+
+.header-Searc .bi-search {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.Header-right {
+    display: flex;
+    /* Elemanları yatay sırala */
+    align-items: center;
+    /* Dikey olarak ortala */
+    gap: 15px;
+    /* İkonlar arası 15px boşluk bırak */
+}
+
+/* + Oluştur Butonunun Konteyner Stili */
+.create-btn {
+    display: flex;
+    /* İkon ve yazıyı yan yana göster */
+    align-items: center;
+    /* Dikey olarak ortala */
+    gap: 8px;
+    /* İkon ile yazı arasında 8px boşluk */
+    background-color: #3F3F3F;
+    /* Koyu gri arka plan rengi */
+    padding: 8px 16px;
+    /* İç boşluk (üst/alt 8px, sol/sağ 16px) */
+    border-radius: 20px;
+    /* Yuvarlak köşeler */
+    cursor: pointer;
+    /* Fareyle üzerinde yaklaştığında el imleç göster */
+    color: white;
+    /* Yazı rengini beyaz yap */
+}
+
+/* + İkonunun Stili */
+.create-btn i {
+    font-size: 18px;
+    /* İkonun boyutu */
+}
+
+/* Oluştur Yazısının Stili */
+.create-btn span {
+    font-size: 14px;
+    /* Yazının boyutu */
+    font-weight: 500;
+    /* Yazının kalınlığı (orta-koyu) */
+}
+
+.profile {
+    width: 32px;
+    /* Profil dairesinin genişliği */
+    height: 32px;
+    /* Profil dairesinin yüksekliği */
+    background-color: #FF6B6B;
+    /* Dairenin arka plan rengini ayarla */
+    border-radius: 50%;
+    /* Kare şekli daire'ye çevir (50% = tam daire) */
+    display: flex;
+    /* İçeriği (E harfi) yatay sırala */
+    justify-content: center;
+    /* E harfini yatay ortala */
+    align-items: center;
+    /* E harfini dikey ortala */
+    cursor: pointer;
+    /* Fareyle üzerine gelinince işaret parmağı göster */
+
+}
+
+.Header-left span {
+    margin-left: 8px;
+    /* YouTube yazısına soldan boşluk ekle */
+    font-size: 18px;
+    /* YouTube yazısının boyutunu ayarla */
+    font-weight: bold;
+    /* YouTube yazısını kalın yap */
+}
+
+/* 🔴 ===== HEADER END ===== */
+
+/* 🔴 ===== SIDEBAR START ===== */
+.sidebar {
+    width: 250px;
+    /* Sidebar genişliği */
+    background-color: black;
+    /* Sidebar arka plan rengi */
+    padding: 16px 0;
+    /* Sidebar içi boşluk */
+    border-right: 1px solid #333;
+    /* Sağ kenara ince çizgi */
+    position: fixed;
+    /* Sabit konumlandırma */
+    top: 56px;
+    /* Header'ın altında başla */
+    left: 0;
+    /* Soldan 0px */
+    height: calc(100vh - 56px);
+    /* Header'ı çıkart */
+    overflow-y: auto;
+    /* Dikey scroll */
+    z-index: 999;
+    /* Header'ın altında */
+}
+
+.sidebar-item {
+    display: flex;
+    /* İkon ve yazıyı yan yana göster */
+    align-items: center;
+    /* Dikey ortala */
+    padding: 12px 24px;
+    /* İç boşluk */
+    cursor: pointer;
+    /* Fareyle üzerine gelinince el imleç */
+    transition: background-color 0.3s;
+    /* Arka plan rengine geçiş efekti */
+}
+
+.sidebar-item:hover {
+    background-color: #333;
+    /* Üzerine gelinince arka planı açılaştır */
+}
+
+.sidebar-item.active {
+    background-color: #303030;
+    /* Seçili olan item'in arka planı */
+    border-left: 4px solid #FF0033;
+    /* Sol kenara kırmızı çizgi */
+    padding-left: 20px;
+    /* Sol padding'i ayarla (border için) */
+}
+
+.sidebar-item i {
+    font-size: 20px;
+    /* İkon boyutu */
+    margin-right: 16px;
+    /* İkon ile yazı arasında boşluk */
+}
+
+.sidebar-item span {
+    font-size: 14px;
+    /* Yazı boyutu */
+    color: white;
+    /* Yazı rengi */
+}
+
+.sidebar-divider {
+    border: none;
+    /* Çizginin kalınlığını sıfırla */
+    border-top: 1px solid #333;
+    /* Gri ayıraç çizgi */
+    margin: 8px 0;
+    /* Çizgiye boşluk */
+}
+
+/* 🔴 ===== SIDEBAR END ===== */
+
+/* 🔴 ===== MAIN CONTAINER START ===== */
+.main-container {
+    margin-top: 56px;
+    /* Header'ın altında başla */
+    margin-left: 250px;
+    /* Sidebar'ın sağında başla */
+    flex: 1;
+    /* Kalan alanı doldur */
+    overflow-y: auto;
+    /* Dikey scroll */
+}
+
+.video-grid {
+    display: grid;
+    /* Grid layout */
+    grid-template-columns: repeat(4, 348px);
+    /* 348px genişlik - sabit boyut */
+    column-gap: 16px;
+    /* Yatay kutular arası boşluk */
+    row-gap: 52px;
+    /* Dikey kutular arası boşluk - 52px */
+    padding: 20px 20px 200px 20px;
+    /* İç boşluk (üst, sol/sağ, alt için extra) */
+    width: 100%;
+    /* Tüm genişliği kapla */
+    min-height: 200vh;
+    /* Sayfanın uzunluğu 2 kat */
+    justify-content: center;
+    /* Grid'i yatay ortala */
+    align-content: start;
+    /* Kutular üstte başla - boşluk alta */
+}
+
+.video-card {
+    background-color: #181818;
+    /* Koyu arka plan */
+    border: 1px solid #404040;
+    /* Silik siyah border */
+    border-radius: 8px;
+    /* Köşeleri yuvarlat */
+    overflow: hidden;
+    /* İçerik dışına taşmasın */
+    cursor: pointer;
+    /* El işareti */
+    transition: transform 0.2s;
+    /* Hover efekti */
+    width: 348px;
+    /* Genişlik - 348px */
+    height: 196px;
+    /* Yükseklik - 196px */
+    display: flex;
+    /* Flex layout */
+    flex-direction: column;
+    /* Dikey sıralama */
+}
+
+.video-card:hover {
+    transform: scale(1.02);
+    /* Üzerine gelinince hafifçe büyüt */
+}
+
+.video-thumbnail {
+    width: 100%;
+    /* Tüm genişliği kapla */
+    height: 110px;
+    /* Thumbnail yüksekliği - 110px */
+    background-color: #404040;
+    /* Arka plan rengi */
+    position: relative;
+    /* Pozisyon referansı */
+    flex-shrink: 0;
+    /* Küçülmesin */
+}
+
+.video-duration {
+    position: absolute;
+    /* Mutlak konumlandırma */
+    bottom: 8px;
+    /* Alttan 8px */
+    right: 8px;
+    /* Sağdan 8px */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Yarı saydam siyah */
+    color: white;
+    /* Yazı rengi */
+    padding: 4px 8px;
+    /* İç boşluk */
+    border-radius: 4px;
+    /* Köşeleri yuvarlat */
+    font-size: 12px;
+    /* Yazı boyutu */
+    font-weight: 600;
+    /* Kalın yazı */
+}
+
+.video-info {
+    padding: 12px;
+    /* İç boşluk */
+}
+
+.video-info h3 {
+    font-size: 14px;
+    /* Başlık boyutu */
+    color: white;
+    /* Yazı rengi */
+    margin-bottom: 8px;
+    /* Alt boşluğu */
+    line-height: 1.4;
+    /* Satır yüksekliği */
+    line-clamp: 2;
+    /* Yazıyı 2 satırla sınırla */
+    overflow: hidden;
+    /* Taşan yazı gizle */
+}
+
+.channel-name {
+    font-size: 12px;
+    /* Yazı boyutu */
+    color: #aaa;
+    /* Gri yazı */
+    margin-bottom: 4px;
+    /* Alt boşluğu */
+}
+
+.video-stats {
+    font-size: 12px;
+    /* Yazı boyutu */
+    color: #aaa;
+    /* Gri yazı */
+}
+
+/* 🔴 ===== MAIN CONTAINER END ===== */
